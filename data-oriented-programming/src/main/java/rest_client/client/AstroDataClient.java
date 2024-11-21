@@ -1,9 +1,9 @@
-package restclient.client;
+package rest_client.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import restclient.records.AstroResponse;
-import restclient.records.Astronaut;
-import restclient.records.Result;
+import rest_client.records.AstroResponse;
+import rest_client.records.Astronaut;
+import rest_client.records.Result;
 
 import java.net.InetSocketAddress;
 import java.net.ProxySelector;

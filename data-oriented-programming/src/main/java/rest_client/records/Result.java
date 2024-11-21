@@ -1,4 +1,4 @@
-package restclient.records;
+package rest_client.records;
 
 import java.util.List;
 import java.util.Map;

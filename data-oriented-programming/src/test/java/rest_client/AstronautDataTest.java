@@ -1,8 +1,8 @@
-package restclient;
+package rest_client;
 
 import org.junit.jupiter.api.Test;
-import restclient.records.Result;
-import restclient.client.AstroDataClient;
+import rest_client.records.Result;
+import rest_client.client.AstroDataClient;
 
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
