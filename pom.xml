@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>data-oriented-programming</module>
+        <module>spring-rabbitmq</module>
     </modules>
 
     <dependencies>
