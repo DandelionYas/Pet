@@ -1,5 +1,6 @@
 package org.example.spring_rabbitmq.config;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -10,51 +11,38 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@RequiredArgsConstructor
 public class RabbitMQConfig {
-
-    @Value("${rabbitmq.queue.name}")
-    private String queue;
-
-    @Value("${rabbitmq.json.queue.name}")
-    private String jsonQueue;
-
-    @Value("${rabbitmq.exchange.name}")
-    private String exchange;
-
-    @Value("${rabbitmq.routing.key}")
-    private String routingKey;
-
-    @Value("${rabbitmq.json.routing.key}")
-    private String jsonRoutingKey;
+    private final RabbitMQProperties properties;
 
     // Spring bean for rabbitmq queue
     @Bean
     public Queue queue() {
-        return QueueBuilder.durable(queue).build();
+        return QueueBuilder.durable(properties.getQueueName()).build();
     }
 
     // Spring bean for rabbitmq queue
     @Bean
     public Queue jsonQueue() {
-        return QueueBuilder.durable(jsonQueue).build();
+        return QueueBuilder.durable(properties.getJsonQueueName()).build();
     }
 
     // Spring bean for rabbitmq exchange
     @Bean
     public TopicExchange exchange() {
-        return new TopicExchange(exchange);
+        return new TopicExchange(properties.getExchangeName());
     }
 
     // Binding between queue and exchange using routing key
     @Bean
     public Binding binding() {
-        return BindingBuilder.bind(queue()).to(exchange()).with(routingKey);
+        return BindingBuilder.bind(queue()).to(exchange()).with(properties.getRoutingKey());
     }
 
     // Binding between jsonQueue and exchange using routing key
     @Bean
     public Binding jsonBinding() {
-        return BindingBuilder.bind(jsonQueue()).to(exchange()).with(jsonRoutingKey);
+        return BindingBuilder.bind(jsonQueue()).to(exchange()).with(properties.getJsonRoutingKey());
     }
 
     // The following infrastructure beans are already configured through Spring Boot's Autoconfiguration

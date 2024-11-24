@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class RabbitMQJsonConsumer {
 
-    @RabbitListener(queues = {"${rabbitmq.json.queue.name}"})
+    @RabbitListener(queues = {"${rabbitmq.json-queue-name}"})
     public void consumeJsonMessage(User user) {
         log.info("Received Json Message => {}", user);
     }
