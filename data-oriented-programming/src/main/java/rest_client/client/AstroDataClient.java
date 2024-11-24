@@ -21,11 +21,13 @@ import java.util.stream.Collectors;
  * Refer to People In Space Open Notify API: http://open-notify.org/Open-Notify-API/People-In-Space **/
 public class AstroDataClient {
     private static final String API_URL = "http://api.open-notify.org/astros.json";
+    private static final String PROXY_IP = "127.0.0.1";
+    private static final Integer PROXY_PORT = 10809;
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     public static Result fetchAndProcessData() {
         try (var client = HttpClient.newBuilder()
-                .proxy(ProxySelector.of(new InetSocketAddress("127.0.0.1", 10809)))
+                .proxy(ProxySelector.of(new InetSocketAddress(PROXY_IP, PROXY_PORT)))
                 .connectTimeout(Duration.ofSeconds(30))
                 .build())  {
             var request = HttpRequest.newBuilder()

@@ -11,3 +11,5 @@ Written in two ways:
 ## Spring RabbitMQ
  - Use Java 21 & Spring Boot 3.3.6 to connect to the RabbitMQ Broker
  - Contains working samples of producer and consumer
+ - Pull RabbitMQ image: `docker pull rabbitmq:{management-tag}`
+ - Run RabbitMQ container: `docker run -d -p 15672:15672 -p 5672:5672 --name my-rabbitmq rabbitmq:{management-tag}`
