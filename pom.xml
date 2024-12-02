@@ -11,6 +11,7 @@
     <modules>
         <module>data-oriented-programming</module>
         <module>spring-rabbitmq</module>
+        <module>design-patterns</module>
     </modules>
 
     <dependencies>
