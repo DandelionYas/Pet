@@ -1,4 +1,5 @@
 package abstract_factory;
 
-public class Monitor {
+public interface Monitor {
+    void assemble();
 }

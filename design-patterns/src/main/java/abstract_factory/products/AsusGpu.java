@@ -1,4 +1,4 @@
-package abstract_factory.impl;
+package abstract_factory.products;
 
 import abstract_factory.Gpu;
 
