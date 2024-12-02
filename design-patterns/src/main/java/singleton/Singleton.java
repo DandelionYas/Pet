@@ -10,13 +10,15 @@ public class Singleton {
     }
 
     public static Singleton getInstance(String data) {
-        if (instance == null) {
+        Singleton result = instance;
+        if (result == null) {
             synchronized (Singleton.class) {
-                if (instance == null) {
-                    instance = new Singleton(data);
+                result = instance;
+                if (result == null) {
+                    instance = result = new Singleton(data);
                 }
             }
         }
-        return instance;
+        return result;
     }
 }
