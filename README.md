@@ -13,3 +13,10 @@ Written in two ways:
  - Contains working samples of producer and consumer
  - Pull RabbitMQ image: `docker pull rabbitmq:{management-tag}`
  - Run RabbitMQ container: `docker run -d -p 15672:15672 -p 5672:5672 --name my-rabbitmq rabbitmq:{management-tag}`
+
+## Review Design Patterns
+To review all the 23 Design Patterns I created a module to push sample codes for each pattern.
+The package structure clearly categorized them into three famous categories:
+ - Creational Patterns
+ - Structural Patterns
+ - Behavioral Patterns
