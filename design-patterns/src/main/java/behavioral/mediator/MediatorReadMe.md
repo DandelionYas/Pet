@@ -1,0 +1,9 @@
+## Outline
+
+### Problem
+
+Have you ever wondered what would happen if three planes were to land or depart at the same time from some airport?  How would the pilots of these planes coordinate the landings with one another?  Well, let me tell you that they won't! If every plane near a certain airport must know of all the surrounding planes, the pilot of this plane will need way more than a co-pilot to help him fly that plane. Trust me on that!  So, with that said, how do pilots know when and where they should land if they have no idea of other planes surrounding them? What if another plane is landing right now?  The answer lies within the airport's traffic control rooms.  You see pilots of aircraft that approach or depart the airport area don't communicate directly with one another. Instead, they speak to a controller who is sitting in his tall tower somewhere near the airstrip without them. Pilots would need to be aware of every plane and would need to discuss landing priorities with lots of other pilots.  This controller, the air traffic controller, plays the role of a mediator. His job is to be the in-between kind of guy, the single point of contact for all the pilots of our planes.
+
+### Solution
+
+Similarly to this air traffic controller, the Mediator Design Pattern defines an object that encapsulates how a set of other objects interact with one another.  Now, because this mediator object defines a set of certain behaviors, the mediator pattern is none other than a behavioral design pattern. This pattern restricts direct communications between certain objects and forces them to collaborate only via a mediator object, hence reducing the dependencies between them.
