@@ -2,6 +2,7 @@ package creational.builder.builders;
 
 import creational.builder.Builder;
 
+
 public class CarSchemaBuilder implements Builder {
     private int id;
     private String make;
@@ -33,7 +34,7 @@ public class CarSchemaBuilder implements Builder {
         return this;
     }
 
-    public Car build() {
-        return new Car(id, make, model, color, year);
+    public CarSchema build() {
+        return new CarSchema(id, make, model, color, year);
     }
 }
