@@ -2,17 +2,15 @@ package behavioral.command;
 
 import behavioral.command.commands.SwitchLightsCommand;
 import behavioral.command.rooms.LivingRoom;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-import java.util.List;
+public class HouseAutomationTest {
 
-public class House {
-    private List<Room> rooms;
-
-    public static void main(String[] args) {
-        House house = new House();
+    @Test
+    public void testHouseAutomation() {
         SwitchLightsCommand command = new SwitchLightsCommand(new Light());
         LivingRoom livingRoom = new LivingRoom(command);
-        house.rooms = List.of(livingRoom);
-        livingRoom.executeCommand();
+        Assertions.assertDoesNotThrow(livingRoom::executeCommand);
     }
 }

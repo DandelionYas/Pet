@@ -1,10 +1,13 @@
 package behavioral.memento;
 
+import lombok.Getter;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class Editor {
     private Deque<TextArea.Memento> stateHistory;
+    @Getter
     private TextArea textArea;
 
     public Editor(TextArea textArea) {
@@ -19,12 +22,5 @@ public class Editor {
 
     public void undo() {
         textArea.restore(stateHistory.pop());
-    }
-
-    public static void main(String[] args) {
-        Editor editor = new Editor(new TextArea());
-        editor.write("Hello World");
-        editor.write("Bye World");
-        editor.undo();
     }
 }

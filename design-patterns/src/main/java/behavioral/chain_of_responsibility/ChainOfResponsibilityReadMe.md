@@ -2,9 +2,7 @@
 
 ### Problem
 
-Imagine you're chilling on Netflix minding your own business when suddenly you receive a text message saying that your credit card was suspended in a rush, you call the bank in attempt to fix this and the first thing you hear is a robotic voice asking if English is your preferred language, then after wasting several minutes of your life you get to speak with a live operator who has no idea what you are talking about eventually after a while, and after they connect you with the right person your issue is resolved, what you experienced here, besides stress, is the propagation of your request from one operator to another If at any point in time the operator you are speaking to does not know how to address your problem he or she will transfer you to the next one because it isn't their responsibility to handle the issue you are encountering.  
-
-Now, if you were to represent the scenario as classes and methods in an application, you will notice that the operators you are talking to constitute a chain of handlers where each handler is responsible for one single task. Therefore, the problem encountered will be initially checked by the first handler or operator in this example, and as long as the operators thinks that there is still hope in solving your issue they will keep transferring you to another operator until you reach the last one additionally any handler can decide not to pass the request further down the chain and effectively stop any further processing
+Imagine you are relaxing on Netflix when a text says your credit card is suspended. You call the bank, and a robotic voice asks your language preference. After wasting time, you finally speak to a live operator who doesn't understand your issue. Eventually, you get connected to the right person and resolve your problem. This experience shows how requests are passed between operators. Each operator only handles one specific task. If they cannot resolve your issue, they will transfer you to the next operator. Any operator can also choose not to pass your request, halting further action.
 
 ### Solution
 

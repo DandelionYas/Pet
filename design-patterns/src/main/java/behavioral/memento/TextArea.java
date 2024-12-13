@@ -1,5 +1,8 @@
 package behavioral.memento;
 
+import lombok.Getter;
+
+@Getter
 public class TextArea {
     private String text;
 

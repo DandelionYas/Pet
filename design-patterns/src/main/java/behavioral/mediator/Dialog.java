@@ -1,7 +1,10 @@
 package behavioral.mediator;
 
+import lombok.Setter;
+
 import java.awt.*;
 
+@Setter
 public class Dialog implements Mediator {
     // Classes used here are not for real
     private TextArea userTextBox;
