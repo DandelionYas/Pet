@@ -12,6 +12,7 @@
         <module>data-oriented-programming</module>
         <module>spring-rabbitmq</module>
         <module>design-patterns</module>
+        <module>spring-features</module>
     </modules>
 
     <properties>
