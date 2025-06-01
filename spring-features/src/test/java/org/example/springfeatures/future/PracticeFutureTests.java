@@ -18,7 +18,7 @@ public class PracticeFutureTests {
      */
     @Test
     public void test() throws InterruptedException, ExecutionException {
-        Future<String> completableFuture = calculateAsync4();
+        Future<String> completableFuture = calculateAsync3();
 
         String result = completableFuture.get();
         assertEquals("Hello World!", result);
@@ -64,7 +64,8 @@ public class PracticeFutureTests {
     /**
      * Processing Results of Asynchronous Computations: The thenApply method does exactly that;
      */
-    public Future<String> calculateAsync4() throws InterruptedException {
+    @Test
+    public void processResult() throws InterruptedException, ExecutionException {
         // The thenAccept method receives a Consumer and passes it the result of the computation. Then the final future.get() call returns an instance of the Void type
         CompletableFuture.supplyAsync(() -> "Hello")
                 .thenAccept(s -> System.out.println("Hello World!"));
@@ -72,8 +73,9 @@ public class PracticeFutureTests {
         CompletableFuture.supplyAsync(() -> "Hello")
                 .thenRun(() -> System.out.println("Computation Finished!"));
         // It accepts a Function instance, uses it to process the result, and returns a Future that holds a value returned by a function.
-        return CompletableFuture.supplyAsync(() -> "Hello")
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> "Hello")
                 .thenApply(s -> s + " World!");
+        assertEquals("Hello World!", future.get());
     }
 
     /**
@@ -122,5 +124,25 @@ public class PracticeFutureTests {
                 .collect(Collectors.joining(" "));
 
         assertEquals("Hello Beautiful World", combined);
+    }
+
+    /**
+     *  Exception Handling:
+     *  The CompletableFuture class allows us to handle exceptions in a special handle method.
+     *  This method receives two parameters: a result of a computation (if it finished successfully) and
+     *  the exception thrown (if some computation step did not complete normally)
+     */
+    @Test
+    public void exceptionHandling() throws InterruptedException, ExecutionException {
+        String name = null;
+        CompletableFuture<String> completableFuture
+                =  CompletableFuture.supplyAsync(() -> {
+            if (name == null) {
+                throw new RuntimeException("Computation error!");
+            }
+            return "Hello, " + name;
+        }).handle((s, t) -> s != null ? s : "Hello, Stranger!");
+
+        assertEquals("Hello, Stranger!", completableFuture.get());
     }
 }
