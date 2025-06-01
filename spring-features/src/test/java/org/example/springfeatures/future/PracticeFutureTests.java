@@ -18,7 +18,7 @@ public class PracticeFutureTests {
      */
     @Test
     public void test() throws InterruptedException, ExecutionException {
-        Future<String> completableFuture = calculateAsync3();
+        Future<String> completableFuture = calculateAsync();
 
         String result = completableFuture.get();
         assertEquals("Hello World!", result);
@@ -144,5 +144,18 @@ public class PracticeFutureTests {
         }).handle((s, t) -> s != null ? s : "Hello, Stranger!");
 
         assertEquals("Hello, Stranger!", completableFuture.get());
+    }
+
+    /**
+     * Async Methods:
+     * Most methods of the fluent API in the CompletableFuture class have two additional variants with the Async postfix.
+     * These methods are usually intended for running a corresponding execution step in another thread.
+     */
+    @Test
+    public void methodsWithAsyncPrefix() throws InterruptedException, ExecutionException {
+        CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> "Hello")
+                .thenApplyAsync(s -> s + " World!");
+
+        assertEquals("Hello World!", completableFuture.get());
     }
 }
