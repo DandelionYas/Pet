@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Articles</title>
+    <style>
+        body {
+            margin: 0;
+            /*height: 100vh;*/
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            grid-template-rows: 1fr 1fr; /* Two equal rows */
+        }
+
+        article {
+            display: flex;
+            /*justify-content: center;*/
+            /*align-items: center;*/
+            height: 50vh;
+            /*border: 2px solid black;*/
+            /*font-size: 20px;*/
+            /*font-weight: bold;*/
+        }
+
+        /*!* Individual styling for each article *!*/
+        article:nth-child(1) {
+            background-color: red;
+            grid-column: 1;
+            grid-row: 1;
+            /*justify-content: flex-start; align-items: flex-start; padding: 10px;*/
+            /*    justify-self: start;  !* Align to the left *!*/
+            /*    align-self: start;    !* Align to the top *!*/
+        }
+
+        article:nth-child(2) {
+            background-color: yellow;
+            /*justify-content: flex-end; align-items: flex-start; padding: 10px;*/
+            /*    justify-self: end;    !* Align to the right *!*/
+            /*    align-self: start;    !* Align to the top *!*/
+        }
+
+        article:nth-child(3) {
+            background-color: blue;
+            /*justify-content: flex-start; align-items: flex-end; padding: 10px;*/
+            /*    justify-self: start;  !* Align to the left *!*/
+            /*    align-self: end;      !* Align to the bottom *!*/
+        }
+
+        article:nth-child(4) {
+            background-color: green;
+            /*justify-content: flex-end; align-items: flex-end; padding: 10px;*/
+            /*    justify-self: end;    !* Align to the right *!*/
+            /*    align-self: end;      !* Align to the bottom *!*/
+        }
+
+    </style>
+</head>
+<body>
+<article>First</article>
+<article>Second</article>
+<article>Third</article>
+<article>Fourth</article>
+</body>
+</html>

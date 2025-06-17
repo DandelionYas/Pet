@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seating Arrangement</title>
+    <style>
+        /* Modify only the CSS and not the surrounding HTML */
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .seat {
+            width: 40px;
+            height: 40px;
+            background-color: lightgreen;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .aisle {
+            width: 40px;
+        }
+
+        .selected {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+<div class="plane">
+    <!-- Row 1 -->
+    <div class="row">
+        <div class="seat">A</div>
+        <div class="seat selected">B</div>
+        <div class="aisle"></div>
+        <div class="seat">C</div>
+        <div class="seat">D</div>
+    </div>
+    <!-- Row 2 -->
+    <div class="row">
+        <div class="seat">A</div>
+        <div class="seat">B</div>
+        <div class="aisle"></div>
+        <div class="seat selected">C</div>
+        <div class="seat">D</div>
+    </div>
+    <!-- Row 3 -->
+    <div class="row">
+        <div class="seat selected">A</div>
+        <div class="seat">B</div>
+        <div class="aisle"></div>
+        <div class="seat">C</div>
+        <div class="seat selected">D</div>
+    </div>
+</div>
+</body>
+</html>
